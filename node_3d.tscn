@@ -1,12 +1,154 @@
 [gd_scene format=3 uid="uid://bhmdxysfwg2lm"]
 
-[node name="Node3D" type="Node3D" unique_id=1758342266]
+[ext_resource type="Script" uid="uid://b3gl8pe3w2dnn" path="res://2д_управление.gd" id="1_a202f"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=330279694]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6687908, 0, 0)
+[sub_resource type="GDScript" id="GDScript_noarx"]
+script/source = "extends Node3D
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=2104564843]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8567667, 0.9758563, 0)
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1154619074]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.2715225, 0, 0, 0)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xowi"]
+albedo_color = Color(0.73635256, 0.52030146, 5.7756904e-07, 1)
+metallic_specular = 0.16
+roughness = 0.67
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
+emission_enabled = true
+emission = Color(1, 0.9019608, 0, 1)
+
+[sub_resource type="Environment" id="Environment_a202f"]
+ssao_enabled = true
+ssao_intensity = 16.0
+glow_normalized = true
+glow_intensity = 8.0
+
+[sub_resource type="GDScript" id="GDScript_a202f"]
+script/source = "extends Camera3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Главная сцена (офис)" type="Node3D" unique_id=1758342266]
+script = SubResource("GDScript_noarx")
+
+[node name="Комната" type="Node" parent="." unique_id=1780630328]
+
+[node name="Стол" type="CSGBox3D" parent="Комната" unique_id=330279694]
+transform = Transform3D(0.79884857, 0, 0, 0, 0.045546196, 0, 0, 0, 0.56242394, 0.02630663, 0.21495122, -0.5163083)
+
+[node name="Стол2" type="CSGBox3D" parent="Комната/Стол" unique_id=1226632600]
+transform = Transform3D(0.057776455, 0, 0, 0, 9.055951, 0, 0, 0, 0.4433243, -0.41169125, -4.3299794, 0.28247786)
+size = Vector3(1, 1, 0.23876953)
+
+[node name="Стол3" type="CSGBox3D" parent="Комната/Стол" unique_id=1225171901]
+transform = Transform3D(0.057776455, 0, 0, 0, 9.055951, 0, 0, 0, 0.4433243, 0.41409898, -4.3299794, 0.28247786)
+size = Vector3(1, 1, 0.23876953)
+
+[node name="Стол4" type="CSGBox3D" parent="Комната/Стол" unique_id=1549369152]
+transform = Transform3D(0.057776455, 0, 0, 0, 9.055951, 0, 0, 0, 0.4433243, -0.41169125, -4.3299794, -0.25717497)
+size = Vector3(1, 1, 0.23876953)
+
+[node name="Стол5" type="CSGBox3D" parent="Комната/Стол" unique_id=662222574]
+transform = Transform3D(0.057776455, 0, 0, 0, 9.055951, 0, 0, 0, 0.4433243, 0.41409898, -4.3299794, -0.25717497)
+size = Vector3(1, 1, 0.23876953)
+
+[node name="Стол6" type="CSGBox3D" parent="Комната/Стол" unique_id=1722764993]
+transform = Transform3D(0.057776455, 0, 0, 0, 9.055951, 0, 0, 0, 0.4433243, 0.41409898, -4.3299794, -0.25717497)
+size = Vector3(1, 1, 0.23876953)
+
+[node name="Лампа Ножка" type="CSGBox3D" parent="Комната" unique_id=941514180]
+transform = Transform3D(0.084441006, 3.7252903e-09, 0, 0, 0.21958975, -9.313226e-10, 0, -3.7252903e-09, 0.08334422, 0.35140264, 0.33313137, -0.66572267)
+material = SubResource("StandardMaterial3D_noarx")
+
+[node name="Лампа Лампа" type="CSGBox3D" parent="Комната" unique_id=1009541986]
+transform = Transform3D(0.022339782, -0.16682725, 0.04950602, 0.07974417, 0.07221512, 0, -0.016494991, 0.12317998, 0.06704785, 0.2956448, 0.4405012, -0.62660646)
+material = SubResource("StandardMaterial3D_a202f")
+
+[node name="Пол" type="CSGBox3D" parent="Комната" unique_id=1154619074]
+transform = Transform3D(3.3516214, 0, 0, 0, 0.13632476, 0, 0, 0, 4.2715225, 0, -0.09722519, 0)
+material = SubResource("StandardMaterial3D_4xowi")
+
+[node name="Потолок" type="CSGBox3D" parent="Комната/Пол" unique_id=731689973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 9.012348, 0)
+material = SubResource("StandardMaterial3D_4xowi")
+
+[node name="Стена2" type="CSGBox3D" parent="Комната/Пол" unique_id=2104564843]
+transform = Transform3D(0.03975695, 0, 0, 0, 9.669856, 0, 0, 0, 0.35941744, 0.24934205, 5.096229, 0.101908095)
+size = Vector3(1, 1, 1.8706055)
+
+[node name="Стена4" type="CSGBox3D" parent="Комната/Пол" unique_id=1399634295]
+transform = Transform3D(0.03975695, 0, 0, 0, 9.669856, 0, 0, 0, 0.35941744, -0.24281523, 5.096229, 0.101908095)
+size = Vector3(1, 1, 1.8706055)
+
+[node name="Стена5" type="CSGBox3D" parent="Комната/Пол" unique_id=685644043]
+transform = Transform3D(-1.7378313e-09, 0, -0.45806476, 0, 9.669855, 0, 0.031195017, 0, -1.5710635e-08, -0.007227417, 5.096229, -0.20708956)
+size = Vector3(1, 1, 1.8706055)
+
+[node name="Лампа Лампа2" type="CSGBox3D" parent="Комната" unique_id=1507577737]
+transform = Transform3D(0.007533701, -0.055949163, 0.02422008, 0.026892327, 0.024218917, 0, -0.0055626477, 0.041311096, 0.032802157, 0.24364612, 0.41497695, -0.58821225)
+material = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="Среда" type="Node" parent="." unique_id=167132647]
+
+[node name="Свет Лампа" type="SpotLight3D" parent="Среда" unique_id=1063901915]
+transform = Transform3D(0.5345889, -0.33314103, 0.77668, -0.8448842, -0.18932371, 0.5003272, -0.019635575, -0.923674, -0.3826759, 0.3013119, 0.451242, -0.6292214)
+light_color = Color(1.3262677, 0.98226655, 0, 1)
+distance_fade_begin = 0.0
+
+[node name="Свет Потолок" type="OmniLight3D" parent="Среда" unique_id=327597112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6391338, 0.707379, -0.076111674)
+
+[node name="2д управление" type="Node2D" parent="." unique_id=134660116]
+script = ExtResource("1_a202f")
+
+[node name="left" type="Button" parent="2д управление" unique_id=605723044]
+visibility_layer = 0
+offset_right = 400.0
+offset_bottom = 648.0
+
+[node name="right" type="Button" parent="2д управление" unique_id=155904073]
+visibility_layer = 0
+offset_left = 752.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="center" type="Button" parent="2д управление" unique_id=1596933572]
+visibility_layer = 0
+offset_left = 400.0
+offset_right = 752.0
+offset_bottom = 648.0
+
+[node name="Камера" type="Camera3D" parent="." unique_id=1714327653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4622389, 0.31268114)
+environment = SubResource("Environment_a202f")
+fov = 67.0
+far = 38.04
+script = SubResource("GDScript_a202f")
+
+[connection signal="mouse_entered" from="2д управление/left" to="2д управление" method="_on_left_mouse_entered"]
+[connection signal="mouse_entered" from="2д управление/right" to="2д управление" method="_on_right_mouse_entered"]
+[connection signal="mouse_entered" from="2д управление/center" to="2д управление" method="_on_center_mouse_entered"]
