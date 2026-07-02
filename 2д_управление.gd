@@ -4,6 +4,7 @@ var cameraState = "idle"
 var maxAngle = 56
 
 func cameraUpdate():
+	print($"../Камера".rotation_degrees[1])
 	match cameraState:
 		"left":
 			if $"../Камера".rotation_degrees[1] < maxAngle:
@@ -17,6 +18,8 @@ func cameraUpdate():
 					$"../Камера".rotate_y(-0.05)
 				elif $"../Камера".rotation_degrees[1] < 0:
 					$"../Камера".rotate_y(0.05)
+			else:
+				$"../Камера".rotation_degrees[1] = 0.0
 
 func _ready() -> void:
 	pass
